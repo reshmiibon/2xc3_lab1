@@ -10,11 +10,9 @@ def is_member_in_a_group(student_no, lst_groups):
                 count += 1
 
     if (count == 1):
-        ans = True
+        return True
     else:
-        ans = False
-
-    return ans
+        return False
 
 # Main Function
 
