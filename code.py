@@ -54,4 +54,3 @@ def are_valid_groups(lst_student_no, group_list):
             result = False
 
     return result
-
