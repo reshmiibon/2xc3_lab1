@@ -3,6 +3,7 @@
 def is_member_in_a_group(student_no, lst_groups):
 
     count = 0
+    val = False
 
     for i in range(len(lst_groups)):
         for j in range(len(lst_groups[i])):
@@ -10,17 +11,17 @@ def is_member_in_a_group(student_no, lst_groups):
                 count += 1
 
     if (count == 1):
-        ans = True
+        val = True
     else:
-        ans = False
+        val = False
 
-    return ans
+    return val
 
 # Main Function
 
 def are_valid_groups(lst_student_no, lst_groups):
 
-    ans = True
+    val = True
     no_of_student = len(lst_student_no)
     no_of_student_in_groups = 0
     bool_lst = []
@@ -38,6 +39,6 @@ def are_valid_groups(lst_student_no, lst_groups):
 
     for i in range(len(bool_lst)):
         if (bool_lst[i] == False):
-            ans = False
+            val = False
 
-    return ans
+    return val
