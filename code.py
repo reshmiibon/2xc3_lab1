@@ -37,7 +37,3 @@ def are_valid_groups(lst_student_no, lst_groups):
             ans = False
 
     return ans
-
-lst_groups = [[1,2,3,4], [5,6,7,8], [9,10,11,12]]
-lst_student_no = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-print(are_valid_groups(lst_student_no, lst_groups))
