@@ -1,49 +1,32 @@
-# Helper Functions
+def is_member_in_a_group(student_no, lst_groups):
 
-def is_member_in_a_group(student_no, group_list):
+    count = 0
 
-    c = 0
+    for i in range(len(lst_groups)):
+        for j in range(len(lst_groups[i])):
+            if (lst_groups[i][j] == student_no):
+                count += 1
 
-    for i in range(len(group_list)):
-        for j in range(len(group_list[i])):
-            if (group_list[i][j] == student_no):
-                c += 1
-
-    if (c == 1):
-        result = True
+    if (count == 1):
+        ans = True
     else:
-        result = False
+        ans = False
 
-    return result
+    return ans
 
-def are_valid_groupsizes(group_list):
+def are_valid_groups(lst_student_no, lst_groups):
 
-    val = True
-
-    for i in range(len(group_list)):
-        if (len(group_list[i]) != 2 and len(group_list[i]) != 3):
-            val = False
-
-    return val
-
-# Main Function
-
-def are_valid_groups(lst_student_no, group_list):
-
-    result = True
+    ans = True
     no_of_student = len(lst_student_no)
     no_of_student_in_groups = 0
     bool_lst = []
 
-    if (are_valid_groupsizes(group_list) == False):
-        return False
-
     for x in range(len(lst_student_no)):
         student_no = lst_student_no[x]
-        bool_lst.append(is_member_in_a_group(student_no, group_list))
+        bool_lst.append(is_member_in_a_group(student_no, lst_groups))
 
-    for i in range(len(group_list)):
-            for j in range(len(group_list[i])):
+    for i in range(len(lst_groups)):
+            for j in range(len(lst_groups[i])):
                 no_of_student_in_groups += 1
         
     if (no_of_student != no_of_student_in_groups):
@@ -51,6 +34,6 @@ def are_valid_groups(lst_student_no, group_list):
 
     for i in range(len(bool_lst)):
         if (bool_lst[i] == False):
-            result = False
+            ans = False
 
-    return result
+    return ans
